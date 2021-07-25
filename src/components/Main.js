@@ -25,7 +25,7 @@ const calculate = () => {
   const checkResult = result.includes('--') ? result.replace('--','+') : result
   try {
       const evaluatedResult = eval(checkResult);
-      setResult(evaluatedResult);
+      setResult(`${evaluatedResult}`);
   } catch (e) {
       setResult("error")
   }
@@ -36,7 +36,9 @@ const reset = () => {
 };
 
 const backspace = () => {
-  setResult(result.slice(0, -1))
+    let temp = result;
+    temp = temp.slice(0, - 1)
+        setResult(temp);
 };
   return (
       <div className="max-w-screen-sm w-1/4 m-auto">
